@@ -50,17 +50,18 @@ const Main = () => {
           <div className="story-list">
               {stories.map(story => (
                   <div className="story-card" key={story.id}>
+                      <img src={"images/dummy-image.jpg"} alt="Dummy" className="story-image" />
                       <div className="text-container">
                           <a href={story.url} target="_blank" rel="noopener noreferrer">
                               <h2>{story.title}</h2>
                           </a>
-                          <p>Time: {new Date(story.time * 1000).toLocaleString()}</p>
+
                           <p>Score: {story.score}</p>
                           <p>Author ID: {story.by}</p>
                           {/* Fetch author's karma score and display */}
                           <p>Author karma score: {story.authorKarma}</p>
+                          <p className={"timestamp"}>{new Date(story.time * 1000).toLocaleString()}</p>
                       </div>
-                      <img src={"images/dummy-image.jpg"} alt="Dummy" className="story-image" />
                   </div>
               ))}
 
